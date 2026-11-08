@@ -3,12 +3,13 @@ services:
     name: algoritmos
     env: node
     plan: free
-    buildCommand: npm install --include=dev && npm run build
+    buildCommand: npm ci --include=dev && npx vite build
     startCommand: npm start
     envVars:
       - key: NODE_ENV
         value: production
     healthCheckPath: /
+
 
 
 
