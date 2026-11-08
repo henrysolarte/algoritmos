@@ -4,8 +4,9 @@ services:
     env: node
     plan: free
     buildCommand: npm install && npm run build
-    startCommand: npm run preview
+    startCommand: npx serve -s dist -l 5173
     envVars:
       - key: NODE_ENV
         value: production
     healthCheckPath: /
+
