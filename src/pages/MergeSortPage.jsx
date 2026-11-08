@@ -113,7 +113,7 @@ export function MergeSortPage() {
             <p>¿Cuántos números aleatorios quieres ordenar?</p>
             
             <div className="size-grid">
-              {[5, 10, 15, 20, 30, 50, 75, 100].map(size => (
+              {[5, 10, 15, 20, 25, 30].map(size => (
                 <button
                   key={size}
                   className={`size-btn ${selectedSize === size ? 'active' : ''}`}
