@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { SelectionSortPage } from './pages/SelectionSortPage'
+import { InsertionSortPage } from './pages/InsertionSortPage'
 import './App.css'
 
 function App() {
@@ -13,16 +14,15 @@ function App() {
       complexity: 'O(n²)',
     },
     {
-      id: 'bubble-sort',
-      name: 'Bubble Sort',
-      description: 'Ordenamiento de Burbuja',
-      complexity: 'O(n²)',
-      disabled: true,
-    },
-    {
       id: 'insertion-sort',
       name: 'Insertion Sort',
       description: 'Ordenamiento por Inserción',
+      complexity: 'O(n²)',
+    },
+    {
+      id: 'bubble-sort',
+      name: 'Bubble Sort',
+      description: 'Ordenamiento de Burbuja',
       complexity: 'O(n²)',
       disabled: true,
     },
@@ -59,6 +59,20 @@ function App() {
           <h1>Algoritmos de Sorting</h1>
         </header>
         <SelectionSortPage />
+      </div>
+    )
+  }
+
+  if (currentPage === 'insertion-sort') {
+    return (
+      <div className="app">
+        <header className="header-with-back">
+          <button className="back-btn" onClick={() => setCurrentPage('home')}>
+            ← Volver al Menú
+          </button>
+          <h1>Algoritmos de Sorting</h1>
+        </header>
+        <InsertionSortPage />
       </div>
     )
   }
