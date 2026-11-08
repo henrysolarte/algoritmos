@@ -211,22 +211,27 @@ export function SelectionSortPage() {
           <div className="array-visualization">
             {currentData.array.map((value, idx) => {
               let barColor = '#667eea'; // Color default (púrpura)
+              let textColor = 'white'; // Color default del texto
               
               // Elementos ya ordenados (azul oscuro)
               if (idx < currentData.sortedUntil) {
                 barColor = '#0ea5e9';
+                textColor = 'white';
               }
               // Elemento actual siendo procesado (VERDE BRILLANTE) - Primera prioridad visual
               else if (idx === currentData.currentIndex) {
                 barColor = '#22c55e';
+                textColor = '#ffffff';
               }
               // Elemento que se está comparando (AMARILLO BRILLANTE)
               else if (idx === currentData.compareIndex) {
                 barColor = '#eab308';
+                textColor = '#000000';
               }
               // Elemento mínimo encontrado (NARANJA)
               else if (idx === currentData.minIndex) {
                 barColor = '#f97316';
+                textColor = '#ffffff';
               }
               
               return (
@@ -242,7 +247,9 @@ export function SelectionSortPage() {
                       : 'none',
                   }}
                 >
-                  <span className="bar-value">{value}</span>
+                  <span className="bar-value" style={{color: textColor}}>
+                    {value}
+                  </span>
                 </div>
               );
             })}
