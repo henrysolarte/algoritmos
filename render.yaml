@@ -3,7 +3,7 @@ services:
     name: algoritmos
     env: node
     plan: free
-    buildCommand: npm install --legacy-peer-deps && npx vite build
+    buildCommand: npm install --legacy-peer-deps --include=dev && npx vite build
     startCommand: npm start
     envVars:
       - key: NODE_ENV
