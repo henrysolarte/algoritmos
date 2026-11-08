@@ -62,6 +62,9 @@ export function SelectionSortPage() {
     return () => clearTimeout(timer);
   }, [isRunning, currentStep, steps, speed]);
 
+  // Determinar si el algoritmo ha terminado
+  const isAlgorithmComplete = steps.length > 0 && currentStep >= steps.length;
+
   const handlePlayPause = () => {
     if (steps.length === 0) {
       handleSort();
@@ -74,7 +77,22 @@ export function SelectionSortPage() {
     setCurrentStep(0);
   };
 
-  const currentData = steps[currentStep] || { array, comparisons: 0, swaps: 0, currentIndex: -1, minIndex: -1, message: '' };
+  // Si el algoritmo está completo, mostrar estado final con todo ordenado
+  let currentData;
+  if (isAlgorithmComplete && sortResult) {
+    currentData = {
+      array: sortResult.array,
+      comparisons: sortResult.comparisons,
+      swaps: sortResult.swaps,
+      sortedUntil: array.length,
+      currentIndex: -1,
+      minIndex: -1,
+      compareIndex: -1,
+      message: '✅ ¡Algoritmo completado! Array ordenado correctamente.'
+    };
+  } else {
+    currentData = steps[currentStep] || { array, comparisons: 0, swaps: 0, currentIndex: -1, minIndex: -1, message: '' };
+  }
   const maxValue = Math.max(...array, 1);
 
   // Modal de selección de tamaño
