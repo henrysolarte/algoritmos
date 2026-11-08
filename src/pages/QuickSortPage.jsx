@@ -207,33 +207,6 @@ export function QuickSortPage() {
           </div>
         </div>
 
-        {/* Leyenda de Colores */}
-        <div className="color-legend">
-          <h4>Leyenda de Colores - Sigue el Algoritmo:</h4>
-          <div className="legend-items">
-            <div className="legend-item">
-              <div className="legend-color" style={{backgroundColor: '#22c55e'}}></div>
-              <span>🟢 Verde Brillante = Elemento siendo intercambiado</span>
-            </div>
-            <div className="legend-item">
-              <div className="legend-color" style={{backgroundColor: '#eab308'}}></div>
-              <span>🟨 Amarillo = Elemento siendo comparado</span>
-            </div>
-            <div className="legend-item">
-              <div className="legend-color" style={{backgroundColor: '#f97316'}}></div>
-              <span>🟠 Naranja = Pivote (elemento de referencia)</span>
-            </div>
-            <div className="legend-item">
-              <div className="legend-color" style={{backgroundColor: '#0ea5e9'}}></div>
-              <span>🔵 Azul Claro = Elementos ya ordenados</span>
-            </div>
-            <div className="legend-item">
-              <div className="legend-color" style={{backgroundColor: '#667eea'}}></div>
-              <span>🟣 Púrpura = Elementos sin procesar</span>
-            </div>
-          </div>
-        </div>
-
         {/* Visualizador */}
         <div className="visualizer">
           <div className="array-visualization">
