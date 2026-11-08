@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { SelectionSortPage } from './pages/SelectionSortPage'
 import { InsertionSortPage } from './pages/InsertionSortPage'
+import { MergeSortPage } from './pages/MergeSortPage'
 import './App.css'
 
 function App() {
@@ -38,7 +39,6 @@ function App() {
       name: 'Merge Sort',
       description: 'Ordenamiento por Mezcla',
       complexity: 'O(n log n)',
-      disabled: true,
     },
     {
       id: 'heap-sort',
@@ -73,6 +73,20 @@ function App() {
           <h1>Algoritmos de Sorting</h1>
         </header>
         <InsertionSortPage />
+      </div>
+    )
+  }
+
+  if (currentPage === 'merge-sort') {
+    return (
+      <div className="app">
+        <header className="header-with-back">
+          <button className="back-btn" onClick={() => setCurrentPage('home')}>
+            ← Volver al Menú
+          </button>
+          <h1>Algoritmos de Sorting</h1>
+        </header>
+        <MergeSortPage />
       </div>
     )
   }
