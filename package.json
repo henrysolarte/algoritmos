@@ -9,7 +9,7 @@
     "preview": "vite preview",
     "test": "vitest",
     "test:ui": "vitest --ui",
-    "start": "serve -s dist -l ${PORT:-5173}"
+    "start": "serve -s dist"
   },
   "dependencies": {
     "react": "^18.2.0",
