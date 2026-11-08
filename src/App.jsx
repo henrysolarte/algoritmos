@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { SelectionSortPage } from './pages/SelectionSortPage'
 import { InsertionSortPage } from './pages/InsertionSortPage'
 import { MergeSortPage } from './pages/MergeSortPage'
+import { QuickSortPage } from './pages/QuickSortPage'
 import './App.css'
 
 function App() {
@@ -21,31 +22,16 @@ function App() {
       complexity: 'O(n²)',
     },
     {
-      id: 'bubble-sort',
-      name: 'Bubble Sort',
-      description: 'Ordenamiento de Burbuja',
-      complexity: 'O(n²)',
-      disabled: true,
-    },
-    {
       id: 'quick-sort',
       name: 'Quick Sort',
       description: 'Ordenamiento Rápido',
       complexity: 'O(n log n)',
-      disabled: true,
     },
     {
       id: 'merge-sort',
       name: 'Merge Sort',
       description: 'Ordenamiento por Mezcla',
       complexity: 'O(n log n)',
-    },
-    {
-      id: 'heap-sort',
-      name: 'Heap Sort',
-      description: 'Ordenamiento por Montículo',
-      complexity: 'O(n log n)',
-      disabled: true,
     },
   ]
 
@@ -87,6 +73,20 @@ function App() {
           <h1>Algoritmos de Sorting</h1>
         </header>
         <MergeSortPage />
+      </div>
+    )
+  }
+
+  if (currentPage === 'quick-sort') {
+    return (
+      <div className="app">
+        <header className="header-with-back">
+          <button className="back-btn" onClick={() => setCurrentPage('home')}>
+            ← Volver al Menú
+          </button>
+          <h1>Algoritmos de Sorting</h1>
+        </header>
+        <QuickSortPage />
       </div>
     )
   }
